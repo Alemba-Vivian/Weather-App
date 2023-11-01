@@ -1,7 +1,7 @@
 import './STYLES/style.css';
 
-// const input = document.querySelector('.myInput').value;
-const input =prompt("enter location", "kenya");
+// const input = document.querySelector('.myInput');
+// const input = prompt("Enter the name of the location", "Kenya");
 const img = document.querySelector('img');
 const container = document.querySelector('.container');
 
@@ -15,7 +15,7 @@ const text6 = document.querySelector('.text6');
 const text7 = document.querySelector('.text7');
 
 async function fetchWeatherAPI(){
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input},{mode:'cors'}`);
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input}`);
     const weatherData = await response.json();
     console.log(weatherData); 
 
@@ -41,25 +41,7 @@ async function fetchWeatherAPI(){
     // }
 
 }
-fetchWeatherAPI();
-
-
-
-// fetch(`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input},{mode:'cors'}`)
-// .then(response=>{
-//     return response.json();
-// })
-// .then(data=>{
-//     console.log(data);
-// })
-// .catch(error=>{
-//     console.log(error);
-// })
-
-
-
-
-
+// fetchWeatherAPI();
 
 
 
