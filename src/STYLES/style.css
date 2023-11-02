@@ -1,8 +1,6 @@
 :root{
-   --primary-bg-clr:#3A3A38;
+   --primary-bg-clr:#181818;
 }
-
-
 
 *{
     margin: 0;
@@ -12,14 +10,14 @@
 
 body{
     height: 100vh;
-    background-color: var(--primary-bg-clr);
+    background-color: #181818;
     color: #ffffff;
 }
 .container{
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 5px;
+    gap: 10px;
     height: 100%;
  
 }
@@ -28,7 +26,7 @@ body{
 /* working with the sidebar */
 .sidebar{
     /* background-color: black; */
-    box-shadow: 5px 10px 10px 10px black;
+    box-shadow: 5px 5px 10px 5px black;
     grid-row: span 2;
     padding: 20px;
     border-radius: 10px;
@@ -40,7 +38,7 @@ body{
 
 }
 .sidebar-one{
-    background-color:var(--primary-bg-clr);
+    /* background-color:#AE445A; */
     border-radius: 50px;
     border: none;
 }
@@ -48,6 +46,7 @@ body{
     flex: 2;
     background-color: var(--primary-bg-clr);
     padding: 20px;
+    color: white;
 }
 
 .sidebar-headings{
@@ -61,7 +60,8 @@ body{
 .sidebar-details li{
     padding-top: 20px;
     list-style-type: none;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
+    color: #DA0C81;
 }
 
 #notification{
@@ -71,16 +71,22 @@ body{
 
 
 .main-one{
-    box-shadow: 5px 10px 10px 5px black;
-    background-color: var(--primary-bg-clr);
+    box-shadow: 5px 5px 10px 5px black;
+    border-radius: 10px;
+    padding: 20px;
+    /* background-color: var(--primary-bg-clr); */
     grid-column-start: 2;
     grid-column-end: 6;
+    margin: 10px;
 }
 .main-two{
-    background-color: var(--primary-bg-clr);
+    /* background-color: var(--primary-bg-clr); */
     grid-column-start: 2;
     grid-column-end: 6;
-    box-shadow: 5px 10px 10px 5px black;
+    box-shadow: 5px 5px 10px 5px black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
 }
 
 

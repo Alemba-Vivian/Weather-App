@@ -1,7 +1,7 @@
 import './STYLES/style.css';
 
 // const input = document.querySelector('.myInput');
-// const input = prompt("Enter the name of the location", "Kenya");
+const input = prompt("Enter the name of the location", "Kenya");
 const img = document.querySelector('img');
 const container = document.querySelector('.container');
 
@@ -44,8 +44,6 @@ async function fetchWeatherAPI(){
 // fetchWeatherAPI();
 
 
-
-
 // function fetchWeatherData(data){
 //     console.log(data);
 //     img.src = data.current.condition.icon;
@@ -57,7 +55,10 @@ async function fetchWeatherAPI(){
 //     }else if(data.current.condition.text==='Moderate rain'){
 //         container.style.backgroundColor ='yellow';
 //     }
-// }      
+// }   
+
+
+
 
 
 
