@@ -19,7 +19,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 10px;
-    height: 100%;
+  
  
 }
 
@@ -90,6 +90,9 @@ body{
 
      
 }
+.user-input input:focus{
+    outline:1px solid  aqua;
+}
 .user-input>label{
    text-align: center;
    color: #f5f5f5;
@@ -150,6 +153,38 @@ padding: 10px;
     grid-column-end: 6;
     margin: 10px;
 }
+.row-one, .row-three{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.one i{
+    font-size: 2rem;
+   
+
+}
+.one p{
+    padding-bottom: 20px;
+}
+.one span{
+    color: #d81159;
+}
+
+.row-two{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+    font-weight: bold;
+}
+.row-three{
+
+}
+
+
+
+
 .main-two{
     background-image: url("../ASSETS/image3.jpg");
     background-size: cover;
@@ -159,8 +194,9 @@ padding: 10px;
     grid-column-end: 6;
     box-shadow: 5px 5px 10px 5px black;
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
     margin: 10px;
+   
 }
 
 
