@@ -5,14 +5,20 @@ const input = prompt("Enter the name of the location", "Kenya");
 const img = document.querySelector('img');
 const container = document.querySelector('.container');
 
-const text = document.querySelector('.text');
-const text1 = document.querySelector('.text1');
-const text2 = document.querySelector('.text2');
-const text3 = document.querySelector('.text3');
-const text4 = document.querySelector('.text4');
-const text5 = document.querySelector('.text5');
-const text6 = document.querySelector('.text6');
-const text7 = document.querySelector('.text7');
+const country = document.querySelector('.location-country');
+const localTime = document.querySelector('.localtime');
+const localtimeEpoch = document.querySelector('.localtime_epoch');
+const weather_text = document.querySelector('.text');
+const name = document.querySelector('.name');
+const region = document.querySelector('.region');
+const tzID = document.querySelector('.tz_id');
+const lat = document.querySelector('.lat');
+const lon = document.querySelector('.lon');
+
+// name.textContent ="";
+// region.textContent ="";
+// tzID.textContent ="";
+
 
 async function fetchWeatherAPI(){
     const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input}`);
@@ -20,18 +26,17 @@ async function fetchWeatherAPI(){
     console.log(weatherData); 
 
     img.src = weatherData.current.condition.icon;
-    text.textContent =weatherData.current.condition.text;
+    weather_text.textContent =weatherData.current.condition.text;
 
-    text1.textContent =`Country: ${weatherData.location.country}`;
-    text2.textContent =`Lat: ${weatherData.location.lat}`;
-    text3.textContent =`Localtime: ${weatherData.location.localtime}`;
-    text4.textContent =`Lon: ${weatherData.location.lon}`;
-    text5.textContent =`Name: ${weatherData.location.name}`;
-    text6.textContent =`Region: ${weatherData.location.region}`;
-    text7.textContent =`Id: ${weatherData.location.tz_id}`;
+    country.textContent =`${weatherData.location.country}`;
+    localTime.textContent =`${weatherData.location.localtime}`;
+    localtimeEpoch.textContent =`${weatherData.location.localtime_epoch}`;
+    lat.textContent =`${weatherData.location.lat}`;
+    lon.textContent =`${weatherData.location.lon}`;
+    name.textContent =`${weatherData.location.name}`;
+    region.textContent =`${weatherData.location.region}`;
+    tzID.textContent =`${weatherData.location.tz_id}`;
     
-
-
     // if(weatherData.current.condition.text==='Sunny'){
     //     container.style.backgroundColor ='red';
     // }else if(weatherData.current.condition.text==='Cloudy'){
@@ -41,7 +46,7 @@ async function fetchWeatherAPI(){
     // }
 
 }
-// fetchWeatherAPI();
+fetchWeatherAPI();
 
 
 // function fetchWeatherData(data){

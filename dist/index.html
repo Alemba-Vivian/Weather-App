@@ -1,94 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/4724/4724562.png">
-    <script src="https://kit.fontawesome.com/6a6bdefd0d.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/128/4724/4724562.png"
+    />
+    <script
+      src="https://kit.fontawesome.com/6a6bdefd0d.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather App</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="container">
+      <!-- start of the sidebar -->
+      <div class="sidebar">
+        <div class="sidebar-column-container">
+          <div class="sidebar-one">
 
-        <!-- start of the sidebar -->
-        <div class="sidebar"> 
-         <div class="sidebar-column-container">
-            <div class="sidebar-one">
-                <div class="sidebar-headings">
-                    <i class="fa-solid fa-gauge"></i>
-                    <h4>weather</h4>
-                </div>
-               
+            <div class="sidebar-headings">
+              <i class="fa-solid fa-gauge"></i>
+              <h4>weather</h4>
+            </div>
 
-                 <ul class="sidebar-details">
-                  <li><i class="fa-solid fa-table-columns"></i></li>
-                  <li><i class="fa-solid fa-book-open"></i></li>
-                  <li><i class="fa-regular fa-user"></i></li>
-                  <li><i class="fa-brands fa-dribbble"></i></li>
-                  <li><i class="fa-solid fa-business-time"></i></li>
-                  <li class="setting"><i class="fa-solid fa-gear"></i></li>
-                  <li><i id="notification" class="fa-regular fa-bell"></i></li>
-                 </ul>
+            <ul class="sidebar-details">
+              <li><i class="fa-solid fa-table-columns"></i></li>
+              <li><i class="fa-solid fa-book-open"></i></li>
+              <li><i class="fa-regular fa-user"></i></li>
+              <li><i class="fa-brands fa-dribbble"></i></li>
+              <li><i class="fa-solid fa-business-time"></i></li>
+              <li class="setting"><i class="fa-solid fa-gear"></i></li>
+              <li><i id="notification" class="fa-regular fa-bell"></i></li>
+            </ul>
+          </div>
 
-              
-            </div>   
-            <div class="sidebar-two">
-                <!-- <div>
-                    <input type="text" placeholder="search" value="kenya">
-                </div>
-                <div>
-                  
-                    <div>
-                        <img src="#" alt="">
-                    </div> 
-                 
-                     <div>
-                        <h4 class="text"></h4>
-                        <h4 class="text1"></h4>
-                        <h4 class="text2"></h4>
-                        <h4 class="text3"></h4>
-                        <h4 class="text4"></h4>
-                        <h4 class="text5"></h4>
-                        <h4 class="text6"></h4>
-                        <h4 class="text7"></h4>
-                    </div> 
-                </div> -->
-            </div> 
-         </div> 
-        </div>
-          <!-- start of the sidebar -->
+          <div class="sidebar-two">
+            <div class="user-input">
+              <label for="input">Search for a location </label>
+              <input
+                id="input"
+                class="myInput"
+                type="text"
+                placeholder="search"
+              />
+            </div>
 
-        <div class="main-one">MAIN ONE</div>
-        <div class="main-two">MAIN TWO</div>
-        
+                    <!-- location details -->
+                   <div class="location-container">
+                          <div class="location-details">
+                               <h1 class="location-country"></h1>
+                                <p class="localtime">Thursday, Nov 2</p>
+                                <p class="localtime_epoch">Thursday, Nov 2</p>
+                          </div>
+
+                           <div class="weather-details">
+                                <p class="text">Rain Shower</p>
+                                <h1 class="mYminmax">24 <sup>o</sup></h1>
+                                <span class="min">Min: 27 <sup>o</sup></span>
+                                <span class="max">Max: 23 <sup>o</sup></span>
+                                <span class="pressure">Pressure: 767 mmHg</span>
+                            </div>
+                    </div>
+
+                    <!-- image icon from the weather app api -->
+                    <div class="image-icon">
+                      <img src="" alt="">
+                      <p>Name: <span class="name">Kisumu</span></p>
+                      <p>Region: <span class="region">Nairobi Area</span></p>
+                      <p>tz_id: <span class="tz_id">Africa/Nairobi</span></p>
+                    </div>
+                    <!--end of image icon from the weather app api -->
+
+                    <div class="longLat-details">
+                        <p>Lon: <span class="lon"></span>  Lat: <span class="lat"></span></p>
+                    </div>
 
 
+              </div>
 
+            </div>
+      </div>
+      <!-- end of the sidebar -->
 
+      <!-- start of the main main-one -->
+      <div class="main-one"></div>
+      <!-- end of the main main-one -->
 
-
-         <!-- <div class="user-input">
-            <input class="myInput" type="text" placeholder="search" value="kenya">
-         </div>
-        <div>
-            <img src="#" alt="">
-        </div> -->
-     
-        <!-- <div>
-            <h4 class="text"></h4>
-            <h4 class="text1"></h4>
-            <h4 class="text2"></h4>
-            <h4 class="text3"></h4>
-            <h4 class="text4"></h4>
-            <h4 class="text5"></h4>
-            <h4 class="text6"></h4>
-            <h4 class="text7"></h4>
-        </div> -->
-        
+      <!-- start of the main main-two -->
+      <div class="main-two"></div>
+      <!-- end of the main main-two -->
     </div>
 
-  
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
