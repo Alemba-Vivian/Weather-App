@@ -36,6 +36,19 @@ const precip_mm = document.querySelector('.precip_mm');
 const temp_c = document.querySelector('.temp_c');
 const temp_f = document.querySelector('.temp_f');
 
+const wind_degree = document.querySelector('.wind_degree');
+const wind_kph = document.querySelector('.wind_kph');
+const wind_mph = document.querySelector('.wind_mph');
+
+const humidity = document.querySelector('.humidity');
+
+const feelslike_c = document.querySelector('.feelslike_c');
+const feelslike_f = document.querySelector('.feelslike_f');
+
+const gust_kph= document.querySelector('.gust_kph');
+const gust_mph= document.querySelector('.gust_mph');
+
+
 
 
 
@@ -76,6 +89,19 @@ async function fetchWeatherAPI(){
     precip_mm.textContent =`${weatherData.current.precip_mm}`;
     temp_c.textContent =`${weatherData.current.temp_c}`;
     temp_f.textContent =`${weatherData.current.temp_f}`;
+
+    wind_degree.textContent =`${weatherData.current.wind_degree}`;
+    wind_kph.textContent =`${weatherData.current.wind_kph}`;
+    wind_mph.textContent =`${weatherData.current.wind_mph}`;
+
+    humidity.textContent =`${weatherData.current.humidity}`;
+
+    feelslike_c.textContent =`${weatherData.current.feelslike_c}`;
+    feelslike_f.textContent =`${weatherData.current.feelslike_f}`;
+
+    gust_kph.textContent =`${weatherData.current.gust_kph}`;
+    gust_mph.textContent =`${weatherData.current.gust_mph}`;
+
 
 
 
