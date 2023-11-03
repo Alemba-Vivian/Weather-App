@@ -1,9 +1,10 @@
 import './STYLES/style.css';
 
 //DOM MANIPULATION--REFERENCES
-// const input = document.querySelector('.myInput');
-const input = prompt("Enter the name of the location", "Kenya");
-const img = document.querySelector('img');
+const form = document.querySelector('form');
+const inputValueFromHTML = document.querySelector('.myInput').value;
+
+const img1 = document.querySelector('#img1');
 const img2 = document.querySelector('#img2');
 
 const container = document.querySelector('.container');
@@ -30,6 +31,12 @@ const lon = document.querySelector('.lon');
 //CURRENT
 const pressure_in = document.querySelector('.pressure_in');
 const pressure_mb = document.querySelector('.pressure_mb');
+
+const pressure_in2 = document.querySelector('.pressure_in2');
+const pressure_mb2 = document.querySelector('.pressure_mb2');
+
+const pressure_in3 = document.querySelector('.pressure_in3');
+
 const uv = document.querySelector('.uv');
 const precip_in = document.querySelector('.precip_in');
 const precip_mm = document.querySelector('.precip_mm');
@@ -52,13 +59,25 @@ const gust_mph= document.querySelector('.gust_mph');
 
 
 
-async function fetchWeatherAPI(){
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input}`);
-    const weatherData = await response.json();
-    console.log(weatherData); 
+form.addEventListener('submit', (e)=>{
+    e.preventDefault(e);
+     
+    let input = document.querySelector('.myInput').value;
+    const url =`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input}`;
 
-    img.src = weatherData.current.condition.icon;
-    img2.src = weatherData.current.condition.icon;
+    if(input === ""){
+        alert("Enter a location name");
+    }else{
+    fetch(url).then(function(response){
+        if(response.ok){
+            return response.json();
+        }else{
+            throw new Error(Error);
+        }
+    })
+    .then(function(weatherData){
+        img1.src = weatherData.current.condition.icon;
+        img2.src = weatherData.current.condition.icon;
   
     //location
     country.textContent =`${weatherData.location.country}`;
@@ -67,8 +86,6 @@ async function fetchWeatherAPI(){
 
     localTime.textContent =`${weatherData.location.localtime}`;
     localTime2.textContent =`${weatherData.location.localtime}`;
-
-
 
     localtimeEpoch.textContent =`${weatherData.location.localtime_epoch}`;
     lat.textContent =`${weatherData.location.lat}`;
@@ -84,6 +101,81 @@ async function fetchWeatherAPI(){
     weather_text.textContent =weatherData.current.condition.text;
     pressure_in.textContent =`${weatherData.current.pressure_in}`;
     pressure_mb.textContent =`${weatherData.current.pressure_mb}`;
+
+    pressure_in2.textContent =`${weatherData.current.pressure_in}`;
+    pressure_in3.textContent =`${weatherData.current.pressure_in}`;
+    pressure_mb2.textContent =`${weatherData.current.pressure_mb}`;
+    
+
+
+    uv.textContent =`${weatherData.current.uv}`;
+    precip_in.textContent =`${weatherData.current.precip_in}`;
+    precip_mm.textContent =`${weatherData.current.precip_mm}`;
+    temp_c.textContent =`${weatherData.current.temp_c}`;
+    temp_f.textContent =`${weatherData.current.temp_f}`;
+
+    wind_degree.textContent =`${weatherData.current.wind_degree}`;
+    wind_kph.textContent =`${weatherData.current.wind_kph}`;
+    wind_mph.textContent =`${weatherData.current.wind_mph}`;
+
+    humidity.textContent =`${weatherData.current.humidity}`;
+
+    feelslike_c.textContent =`${weatherData.current.feelslike_c}`;
+    feelslike_f.textContent =`${weatherData.current.feelslike_f}`;
+
+    gust_kph.textContent =`${weatherData.current.gust_kph}`;
+    gust_mph.textContent =`${weatherData.current.gust_mph}`;    
+
+   
+    })
+    
+    .catch(function(error){
+        console.log(error);
+    });    
+}
+
+
+});
+
+
+async function fetchWeatherAPI(){
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${inputValueFromHTML}`);
+    const weatherData = await response.json();
+    console.log(weatherData); 
+
+    img1.src = weatherData.current.condition.icon;
+    img2.src = weatherData.current.condition.icon;
+  
+    //location
+    country.textContent =`${weatherData.location.country}`;
+    country2.textContent =`${weatherData.location.country}`;
+    country3.textContent =`${weatherData.location.country}`;
+
+    localTime.textContent =`${weatherData.location.localtime}`;
+    localTime2.textContent =`${weatherData.location.localtime}`;
+
+    localtimeEpoch.textContent =`${weatherData.location.localtime_epoch}`;
+    lat.textContent =`${weatherData.location.lat}`;
+    lon.textContent =`${weatherData.location.lon}`;
+
+    name.textContent =`${weatherData.location.name}`;
+    name2.textContent =`${weatherData.location.name}`;
+
+    region.textContent =`${weatherData.location.region}`;
+    tzID.textContent =`${weatherData.location.tz_id}`;
+
+    //current
+    weather_text.textContent =weatherData.current.condition.text;
+    pressure_in.textContent =`${weatherData.current.pressure_in}`;
+    pressure_mb.textContent =`${weatherData.current.pressure_mb}`;
+
+    pressure_in2.textContent =`${weatherData.current.pressure_in}`;
+    pressure_in3.textContent =`${weatherData.current.pressure_in}`;
+
+    pressure_mb2.textContent =`${weatherData.current.pressure_mb}`;
+   
+
+
     uv.textContent =`${weatherData.current.uv}`;
     precip_in.textContent =`${weatherData.current.precip_in}`;
     precip_mm.textContent =`${weatherData.current.precip_mm}`;
@@ -102,35 +194,10 @@ async function fetchWeatherAPI(){
     gust_kph.textContent =`${weatherData.current.gust_kph}`;
     gust_mph.textContent =`${weatherData.current.gust_mph}`;
 
-
-
-
-
-    
-    // if(weatherData.current.condition.text==='Sunny'){
-    //     container.style.backgroundColor ='red';
-    // }else if(weatherData.current.condition.text==='Cloudy'){
-    //     container.style.backgroundColor ='green';
-    // }else if(weatherData.current.condition.text==='Moderate rain'){
-    //     container.style.backgroundColor ='yellow';
-    // }
-
 }
 fetchWeatherAPI();
 
-
-// function fetchWeatherData(data){
-//     console.log(data);
-//     img.src = data.current.condition.icon;
-//     text.textContent =data.current.condition.text;
-//     if(data.current.condition.text==='Sunny'){
-//         container.style.backgroundColor ='red';
-//     }else if(data.current.condition.text==='Cloudy'){
-//         container.style.backgroundColor ='green';
-//     }else if(data.current.condition.text==='Moderate rain'){
-//         container.style.backgroundColor ='yellow';
-//     }
-// }   
+  
 
 
 
