@@ -37,15 +37,16 @@
           </div>
 
           <div class="sidebar-two">
-            <div class="user-input">
+            <form class="user-input">
               <label for="input">Search for a location </label>
               <input
                 id="input"
                 class="myInput"
                 type="text"
                 placeholder="search"
+                value="Kenya";
               />
-            </div>
+            </form>
 
                     <!-- location details -->
                    <div class="location-container">
@@ -57,16 +58,16 @@
 
                            <div class="weather-details">
                                 <p class="text">Rain Shower</p>
-                                <h1 class="mYminmax">24 <sup>o</sup></h1>
-                                <span class="min">Min: 27 <sup>o</sup></span>
-                                <span class="max">Max: 23 <sup>o</sup></span>
-                                <span class="pressure">Pressure: 767 mmHg</span>
+                                <h1 class="mYminmax pressure_in3"><sup>o</sup></h1>
+                                <p>Min:  <span class="pressure_in2"><sup>o</sup></span></p>
+                                <p>Max:  <span class="pressure_mb2"><sup>o</sup></span></p>
+                                <p>Pressure: <span class="pressure">767 mmHg</span></p> 
                             </div>
                     </div>
 
                     <!-- image icon from the weather app api -->
                     <div class="image-icon">
-                      <img src="" alt="">
+                      <img id="img1" src="" alt="">
                       <p>Name: <span class="name">Kisumu</span></p>
                       <p>Region: <span class="region">Nairobi Area</span></p>
                       <p>tz_id: <span class="tz_id">Africa/Nairobi</span></p>
