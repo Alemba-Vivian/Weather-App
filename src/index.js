@@ -63,7 +63,7 @@ form.addEventListener('submit', (e)=>{
     e.preventDefault(e);
      
     let input = document.querySelector('.myInput').value;
-    const url =`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input}`;
+    const url =`https://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${input}`;
 
     if(input === ""){
         alert("Enter a location name");
@@ -139,7 +139,7 @@ form.addEventListener('submit', (e)=>{
 
 
 async function fetchWeatherAPI(){
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${inputValueFromHTML}`);
+    const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=8f4531915fce4da6a2e133242232310&q=${inputValueFromHTML}`);
     const weatherData = await response.json();
     console.log(weatherData); 
 
