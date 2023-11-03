@@ -17,21 +17,50 @@ body{
 .container{
     padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
     gap: 10px;
   
  
 }
 
 
+
+
+/* RESPONSIVENESS */
+@media (min-width:50em) {
+
+    .grid-row-span{
+        grid-row: span 2;
+    
+    }
+     .container{
+        grid-template-columns: 1fr 2fr;
+     }
+     .main-two{
+        grid-column-start: 2;
+        grid-column-end: 6;
+     }
+     .main-one{
+        grid-column-start: 2;
+        grid-column-end: 6;
+     }
+     
+}
+
+/* END OF RESPONSIVENESS */
+
+
+
+
+
+
 /* working with the sidebar */
 .sidebar{
     /* background-color: black; */
     box-shadow: 5px 5px 10px 5px black;
-    grid-row: span 2;
     padding: 20px;
     border-radius: 10px;
 }
+
 .sidebar-column-container{
     display: flex;
     gap: 5px;
@@ -150,8 +179,6 @@ padding: 10px;
     box-shadow: 5px 5px 10px 5px turquoise;
     border-radius: 10px;
     padding: 20px;
-    grid-column-start: 2;
-    grid-column-end: 6;
     margin: 10px;
 }
 .row-one, .row-three{
@@ -184,15 +211,11 @@ padding: 10px;
 }
 
 
-
-
 .main-two{
     background-image: url("../ASSETS/image3.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    grid-column-start: 2;
-    grid-column-end: 6;
     box-shadow: 5px 5px 10px 5px black;
     border-radius: 10px;
     padding: 30px;
